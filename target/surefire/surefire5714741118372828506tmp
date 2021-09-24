@@ -1,0 +1,11 @@
+#surefire
+#Fri Sep 24 23:36:54 AEST 2021
+jpda.address=17508
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.0.2\\java\\maven-nblib\\netbeans-eventspy.jar
+jpda.listen=true
+forkMode=once
+user.dir=C\:\\Users\\munuka\\Desktop\\Erandi\\MyGame2
+localRepository=C\:\\Users\\munuka\\.m2\\repository
+test=ass3.mygame2.GameTest
+basedir=C\:\\Users\\munuka\\Desktop\\Erandi\\MyGame2
+maven.surefire.debug=-Xdebug -Xrunjdwp\:transport\=dt_socket,server\=n,address\=17508
