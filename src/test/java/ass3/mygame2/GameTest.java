@@ -56,7 +56,7 @@ public class GameTest {
      /**
      * Test of takeItem method, of class Game.
      * Test print long description
-     */
+    
     @Test
     public void testTakeItemLongDescription() {
         System.out.println("takeItem Long Description");
@@ -65,5 +65,17 @@ public class GameTest {
         instance.takeItem(command);
         assertEquals("You are at the castle.\nExits: east south.\nYou have some items: excaliburSword", instance.s);
     }
+     */
     
+    @Test
+    public void testDropItemLongDescription() {
+        System.out.println("dropItem Long Description");
+        Command command = new Command("take","key");
+        Command command2 = new Command("drop","key");
+
+        Game instance = new Game();
+        instance.takeItem(command);
+        instance.dropItem(command2);
+        assertEquals("You are at the castle.\nExits: east south.\nYou have some items: excaliburSword key", instance.s1);
+    }
 }

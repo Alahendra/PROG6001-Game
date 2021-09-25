@@ -1,7 +1,0 @@
-#surefire
-#Fri Sep 24 21:29:01 AEST 2021
-maven.ext.class.path=C\:\\Program Files\\NetBeans 8.0.2\\java\\maven-nblib\\netbeans-eventspy.jar
-user.dir=C\:\\Users\\munuka\\Desktop\\Erandi\\MyGame2
-localRepository=C\:\\Users\\munuka\\.m2\\repository
-basedir=C\:\\Users\\munuka\\Desktop\\Erandi\\MyGame2
-test=ass3.mygame2.GameTest

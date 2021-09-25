@@ -27,7 +27,7 @@ public class Game {
     private HashMap<Item, Room> roomKey;
 
     private int timeCounter; // to count the steps
-    String s;
+    String s,s1;
 
     /**
      * Create the game and initialise its internal map.
@@ -99,8 +99,7 @@ public class Game {
         } else if (commandWord.equals("go")) {
             goRoom(command);
         } else if (commandWord.equals("take")) {
-            takeItem(command);
-            return true;
+            takeItem(command);        
         } else if (commandWord.equals("drop")) {
             dropItem(command);
         } else if (commandWord.equals("use")) {
@@ -189,13 +188,13 @@ public class Game {
             //addItemInventory(currentItem);
             
             //Erandi-1
-           s = currentRoom.getLongDescription();
+            s = currentRoom.getLongDescription();
             System.out.println(currentRoom.getLongDescription());
         }
         
     }
 
-    private void dropItem(Command command) {
+    void dropItem(Command command) {
         if (!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Take what?");
@@ -217,7 +216,8 @@ public class Game {
             //roomItem.put(currentItem, currentRoom);
             
             //Erandi-2
-            //System.out.println(currentRoom.getLongDescription());
+            s1 = currentRoom.getLongDescription();
+            System.out.println(currentRoom.getLongDescription());
         }
     }
 
