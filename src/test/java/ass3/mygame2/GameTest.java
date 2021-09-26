@@ -90,6 +90,7 @@ public class GameTest {
     /**
      * Test of Use command, of class Game.
      */
+    /*
     @Test
     public void testUseCommand() {
         System.out.println("Use command without second word");
@@ -98,4 +99,50 @@ public class GameTest {
         boolean result = !command.hasSecondWord();
         assertEquals(expResult, result);
     }
+    */
+    
+    /**
+     * Test when player use the key and door should unlock
+     */
+    
+    @Test
+    public void testRoomUnlock() {
+        System.out.println("Test room unlock after use command");
+        Command takeKey = new Command("take","frontGateKey");
+        Command useKey = new Command("use","frontGateKey");
+        Command goCommand = new Command("go","east");
+        Command goCommand1 = new Command("go","west");
+        Command goCommand2 = new Command("go","south");
+        Command goCommand3 = new Command("go","north");
+        Game instance = new Game();
+        
+        //Go east direction to Kitchen
+        instance.goRoom(goCommand);
+        
+        //Take frontGateKey in the kitchen
+        instance.takeItem(takeKey);
+        
+        //Go west direction to Castle
+        instance.goRoom(goCommand1);
+        
+        //Go south direction to frontGate
+        instance.goRoom(goCommand2);
+        
+        //Try go back to castle (but the room is locked)
+        instance.goRoom(goCommand3);
+        
+        //use frontGateKey to unlock to go back to the castle
+        instance.useItem(useKey);
+        
+        //The door is unlocked and able to go back to the castle
+        instance.goRoom(goCommand3);
+        
+        boolean expResult = false;
+        boolean result = instance.TestLockVal;
+        assertEquals(expResult, result);
+        
+    }
+    
+    
+    
 }

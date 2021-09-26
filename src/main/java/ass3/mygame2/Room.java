@@ -15,7 +15,7 @@ public class Room
 {
     private String description;
     private String name;
-    private boolean isLocked;
+    boolean isLocked;
     private HashMap<String, Room> exits;        // stores exits of this room.
     private ArrayList<Item> roomItem;
     private HashMap<Room, Item> roomHashMapItem;

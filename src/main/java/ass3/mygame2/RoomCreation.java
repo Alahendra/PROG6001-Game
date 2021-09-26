@@ -26,7 +26,8 @@ public class RoomCreation {
 
         castle.setExit("east", kitchen);
         //Erandi-5
-        //kitchen.setExit("west", castle);
+        kitchen.setExit("west", castle);
+        
         castle.setExit("south", frontGate);
         frontGate.setExit("north", castle);
 

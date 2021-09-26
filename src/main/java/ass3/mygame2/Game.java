@@ -28,6 +28,7 @@ public class Game {
 
     private int timeCounter; // to count the steps
     String s,s1;
+    boolean TestLockVal;
 
     /**
      * Create the game and initialise its internal map.
@@ -140,7 +141,7 @@ public class Game {
      * Try to in to one direction. If there is an exit, enter the new room,
      * otherwise print an error message.
      */
-    private void goRoom(Command command) {
+    void goRoom(Command command) {
         if (!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Go where?");
@@ -222,7 +223,7 @@ public class Game {
         }
     }
 
-    private void useItem(Command command) // use key
+     void useItem(Command command) // use key
     {
         if (!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
@@ -231,25 +232,33 @@ public class Game {
         }
 
         String itemFromCommand = command.getSecondWord();
-        Item currentItem = currentRoom.getRoomItem(itemFromCommand);
+        Item currentItem = player.getPlayerItem(itemFromCommand);
 
-        if (currentItem == null) {
+        if (currentItem == null) 
+        {
             System.out.println("You can't use nothing, no?");
-        } else {
-            // you want make sure that the currentRoom is the room where you want to open the door (before the nextdoor).
-            // you want to make sure the currentItem matches the key to open the next door.
+        } 
+        else 
+        {
+            //Erandi-5
+            if(currentRoom.getName().equals("frontGate") && currentItem.getName().equals("frontGateKey"))
+            {
+                currentRoom.setLockedStatus(false);
+                TestLockVal= currentRoom.isLocked;
+                
+                System.out.println("You just used the " + currentItem.getName());
+            }
+            else
+            {
 
-            //if(currentRoom.getName().equals("castle") && currentItem.getName().equals("key")){
-            //.setLockedStatus(false);
-            System.out.println("You just used the " + currentItem.getName());
-
-            //if(currentRoom.getName().equals("frontYard") && currentItem.getName().equals("item1")){
-            //frontGate.setLockedStatus(false);
-            // if(currentRoom.getName().equals("castle")){
-            // //currentRoom.checkRoom("castle");
-            // roomKey.get(currentItem).setLockedStatus(false);
-            // }
+                //if(currentRoom.getName().equals("frontYard") && currentItem.getName().equals("item1")){
+                //frontGate.setLockedStatus(false);
+                // if(currentRoom.getName().equals("castle")){
+                // //currentRoom.checkRoom("castle");
+                // roomKey.get(currentItem).setLockedStatus(false);
+                // }
             System.out.println("You cannot use this item here");
+            }
 
         }
 
