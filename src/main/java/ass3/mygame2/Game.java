@@ -103,7 +103,8 @@ public class Game {
         } else if (commandWord.equals("drop")) {
             dropItem(command);
         } else if (commandWord.equals("use")) {
-            //useItem(command);
+            //Erandi-4
+            useItem(command);
         } else if (commandWord.equals("inspect")) {
             //lookItem(command);
         } else if (commandWord.equals("quit")) {
@@ -225,7 +226,7 @@ public class Game {
     {
         if (!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
-            System.out.println("Take what?");
+            System.out.println("Use what?");
             return;
         }
 

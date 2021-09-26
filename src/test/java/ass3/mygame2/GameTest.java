@@ -67,6 +67,10 @@ public class GameTest {
     }
      */
     
+    /**
+     * /**
+     * Test of dropItem method, of class Game.
+     * T
     @Test
     public void testDropItemLongDescription() {
         System.out.println("dropItem Long Description");
@@ -77,5 +81,21 @@ public class GameTest {
         instance.takeItem(command);
         instance.dropItem(command2);
         assertEquals("You are at the castle.\nExits: east south.\nYou have some items: excaliburSword key", instance.s1);
+    }
+    */
+    
+    
+    
+    
+    /**
+     * Test of Use command, of class Game.
+     */
+    @Test
+    public void testUseCommand() {
+        System.out.println("Use command without second word");
+        Command command = new Command("use","");
+        boolean expResult = false;
+        boolean result = !command.hasSecondWord();
+        assertEquals(expResult, result);
     }
 }
